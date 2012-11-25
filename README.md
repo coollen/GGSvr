@@ -5,6 +5,7 @@ GGSvr是非常轻量级的使用socket的MMORPG服务端框架.它运行在linux
 
 特性:
 ---------------------
+* 单线程
 * 纯python
 * 使用gevent网络底层
 * 使用message-pack作作为网络消息协议
