@@ -21,7 +21,7 @@ GGSvr是非常轻量级的使用socket的MMORPG服务端框架.它运行在linux
 使用说明:
 --------------------
 * 安装easy_install
-  apt-get install python-setuptools
+  * apt-get install python-setuptools
 
 * 安装gevnet:
   * 安装debian编译环境  apt-get install build-essential 
@@ -30,16 +30,16 @@ GGSvr是非常轻量级的使用socket的MMORPG服务端框架.它运行在linux
   * easy_install gevent
 
 * 安装MessagePack
-  easy_install msgpack-python
+  * easy_install msgpack-python
 
 * 安装SQLAlchemy
-  easy_install sqlalchemy
+  * easy_install sqlalchemy
 
 * 获取GGSvr代码
-  git clone https://github.com/coollen/GGSvr.git
+  * git clone https://github.com/coollen/GGSvr.git
 
 * 启动服务器端
-  python init.py
+  * python init.py
 
 * 启动测试客户端
   * cd test
