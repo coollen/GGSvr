@@ -52,5 +52,7 @@ GGSvr是非常轻量级的使用socket的MMORPG服务端框架.它运行在linux
 * gevent官网:http://www.gevent.org
 * MessagePack官网:http://msgpack.org
 * SQLAlchemy官网:http://www.sqlalchemy.org
-  
+
+---------------------
+我经常打出GG
 
