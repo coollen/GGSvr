@@ -26,15 +26,11 @@ patch_sys_path()
 
 
 # ------------------------------
-import gconfig, gnet, glog, gdb
-#import account_mgr, player_mgr
-#import db_tables
+import gnet, glog, gdb
 
 def main():
 
     # 初始化底层库
-    # 配置文件
-    gconfig.init()
 
     # 日志
     glog.init()
@@ -45,13 +41,9 @@ def main():
     # 数据库
     #gdb.init()
 
-    # mgr
-    #account_mgr.init()
-    #player_mgr.init()
-
-    # 游戏逻辑
-    import svr_main
-    svr_main.init()
+    # db server
+    import svr_db
+    svr_db.init()
 
     # 开始服务
     gnet.start_loop()
