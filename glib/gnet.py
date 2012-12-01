@@ -10,12 +10,9 @@ global MSG_MAP
 
 
 # 初始化
-def init():
+def init(ip, port):
     global MSG_MAP
     MSG_MAP = {}
-
-    ip = ''
-    port = 5018
     
     glog.log("server at " + ip +"("+ str(port) +")" )
     trans.init(ip, port, on_connect, on_disconnect, on_data)

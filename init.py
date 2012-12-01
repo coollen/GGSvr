@@ -40,7 +40,7 @@ def main():
     glog.init()
 
     # 网络
-    gnet.init()
+    gnet.init(gconfig.SVR_MAIN_IP, gconfig.SVR_MAIN_PORT)
 
     # 数据库
     #gdb.init()

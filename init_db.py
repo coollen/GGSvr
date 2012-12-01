@@ -26,17 +26,19 @@ patch_sys_path()
 
 
 # ------------------------------
-import gnet, glog, gdb
+import gconfig, gnet, glog, gdb
 
 def main():
 
     # 初始化底层库
+    # 配置文件
+    gconfig.init()
 
     # 日志
     glog.init()
 
     # 网络
-    gnet.init()
+    gnet.init(gconfig.SVR_DB_IP, gconfig.SVR_DB_PORT)
 
     # 数据库
     #gdb.init()
