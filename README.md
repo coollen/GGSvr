@@ -45,7 +45,7 @@ GGSvr是非常轻量级的使用socket的MMORPG服务端框架.它运行在linux
 * 启动测试客户端
   * cd test
   * python test_client.py
-  * 输入:h (回车) 可以显示出支持的命令
+  * 输入h (回车) 可以显示出支持的命令
 
 
 其他资料:
