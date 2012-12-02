@@ -2,83 +2,102 @@
 # 网络模块
 import traceback
 import msgpack
-import net_transport as trans
+import socket
+import net_transport_server as trans
+import net_transport_sub_server as trans_sub
 import glog
 
 # 注册的消息表
 global MSG_MAP
-
+MSG_MAP = {}
+# 子服务器表 {name:{id:connection_id},..}
+global SUB_SERVER_MAP
+SUB_SERVER_MAP = {}
+# 子服务器登录消息头
+MSGID_SUB_SERVER_LOGIN = 'SUB_SERVER_LOGIN'
+# 初始化状态
+global is_sub_server
+is_sub_server = False
 
 # 初始化
-def init(ip, port):
-    global MSG_MAP
-    MSG_MAP = {}
+def init(ip, port): 
+    glog.log("server at (%s : %d)" % (ip, port))
+    trans.init((ip, port), on_connect, on_disconnect, on_data)
     
-    glog.log("server at " + ip +"("+ str(port) +")" )
-    trans.init(ip, port, on_connect, on_disconnect, on_data)
+    # 注册子服务器登录
+    reg(MSGID_SUB_SERVER_LOGIN, on_sub_server_login)
+    
+
+# 初始化子服务器
+def init_sub_server(main_ip, main_port, sub_name, sub_id):
+    global is_sub_server
+    glog.log("server sub_server (%s : %d)" % (sub_name, sub_id)) 
+    conn_id = trans_sub.init((main_ip, main_port), on_connect, on_disconnect, on_data)
+    
+    # 发送子服务器登录
+    msg = msgpack.packb((MSGID_SUB_SERVER_LOGIN, sub_name, sub_id))
+    trans_sub.send(conn_id, msg)
+
+    is_sub_server = True
 
 
 # 循环
 def start_loop():
+    global is_sub_server
     glog.log("gnet>start_loop ------------------")    
-    trans.start_loop()
-
+    if is_sub_server:    
+        trans_sub.start_loop()
+    else:
+        trans.start_loop()
 
 
 # 注册数据
 def reg(id, func):
     global MSG_MAP
     if id in MSG_MAP:
-        print "gnet>id already exist|id:%d func:%s" % (id, repr(func))
+        glog.warning("gnet>id already exist|id:%d func:%s" % (id, repr(func)))
         return False
 
     MSG_MAP[id] = func
-#    print "MSG_MAP:", MSG_MAP
     return True
 
 
 # 发送数据
 def send(connection_id, data):
-    print "gnet>[send]", connection_id, data
+    glog.log("gnet>[send] %d %s" % (connection_id, str(data)))
 
-    packer = msgpack.Packer()
-    serialized = packer.pack(data)
+    serialized = msgpack.packb(data)
     trans.send(connection_id, serialized)
 
 
 # client连接
 def on_connect(address, connection_id):
-    print "on_connect", address, connection_id
-    pass
+    glog.log("on_connect: %s %d" % (address, connection_id))
 
 
 # client断开
 def on_disconnect(connection_id):
-    print "on_disconnect", connection_id
-    pass
-
+    glog.log("on_disconnect: %d" + connection_id)
+    
 
 # 收到网络消息
 def on_data(connection_id, data):
     global MSG_MAP
-#    print "gnet>[recv]", connection_id, data
     
     try:
-        up = msgpack.Unpacker()
-        up.feed(data)
-        msg = up.unpack()
+        msg = msgpack.unpackb(data)
     except Exception as e:
-        print "gnet>ERROR message format"
+        glog.error("gnet>ERROR message format")
         raise e
         return
 
     # 强制转成[]
     msg = list(msg)
-    print "gnet>[recv]", msg
+    glog.log("gnet>[recv] %s" % str(msg))
     msgid = msg[0]
 
     if not msgid in MSG_MAP:
-        print "gnet>on_data msgid not in MSG_MAP|msgid:%d" % msgid
+        glog.error("gnet>on_data msgid not in MSG_MAP|msgid:%s" % str(msgid))
         return
 
     # 调用注册的函数
@@ -96,4 +115,34 @@ def on_data(connection_id, data):
 # 断开玩家
 def disconnect():
     pass
+
+
+# 设置服务器
+def def_sub_server(name):
+    global SUB_SERVER_MAP
+    SUB_SERVER_MAP[name] = {}
+
+
+# 子服务器登录
+def on_sub_server_login(data):
+    global SUB_SERVER_MAP
+    
+    connection_id = data[0]
+    name = data[1]
+    id = data[2]
+
+    if not name in SUB_SERVER_MAP:
+        glog.error("gnet>on_sub_server_login sub_server NOT def:%s" % name)     
+        return
+
+    SUB_SERVER_MAP[name][id] = connection_id
+    
+    #* test
+    send(connection_id, ["msgid", "test message"])
+    import gevent
+    gevent.sleep(2)
+    send(connection_id, ["msgid", "test 2"])
+
+
+
 

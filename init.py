@@ -41,6 +41,7 @@ def main():
 
     # 网络
     gnet.init(gconfig.SVR_MAIN_IP, gconfig.SVR_MAIN_PORT)
+    gnet.def_sub_server(gconfig.SVR_DB_NAME)
 
     # 数据库
     #gdb.init()

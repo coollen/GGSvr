@@ -38,7 +38,7 @@ def main():
     glog.init()
 
     # 网络
-    gnet.init(gconfig.SVR_DB_IP, gconfig.SVR_DB_PORT)
+    gnet.init_sub_server(gconfig.SVR_MAIN_IP, gconfig.SVR_MAIN_PORT, gconfig.SVR_DB_NAME, gconfig.SVR_DB_ID)
 
     # 数据库
     #gdb.init()

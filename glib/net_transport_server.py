@@ -1,4 +1,5 @@
 # coding: utf-8
+import gevent
 from gevent import monkey;
 from gevent.server import StreamServer
 import glog
@@ -40,13 +41,13 @@ def spawn(socket, address):
             break
         else:
             _on_data(conn, buff)
+            gevent.sleep(0)
 
     _on_disconnect(conn)
 
 
-
 # 初始化
-def init(ip, port, on_connect_callback, on_disconnect_callback, on_data_callback):
+def init(address, on_connect_callback, on_disconnect_callback, on_data_callback):
     global server
     global func_on_data, func_on_disconnect, func_on_connect
 
@@ -54,7 +55,7 @@ def init(ip, port, on_connect_callback, on_disconnect_callback, on_data_callback
     func_on_disconnect = on_disconnect_callback
     func_on_data = on_data_callback
 
-    server = StreamServer((ip, port), spawn)
+    server = StreamServer(address, spawn)
 
 
 # 循环
@@ -71,13 +72,13 @@ def send(connection_id, buff):
 
 
 # 连接
-def _on_connect(connection_id, address):
+def _on_connect(socket, address):
     global func_on_connect
-    conn = Connection(connection_id, address)
+    conn = Connection(socket, address)
     connections[conn.connection_id] = conn
 
     if func_on_connect:
-        func_on_connect(address, connection_id)
+        func_on_connect(address, conn.connection_id)
 
     return conn
 
