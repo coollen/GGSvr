@@ -135,14 +135,17 @@ def on_sub_server_login(data):
         glog.error("gnet>on_sub_server_login sub_server NOT def:%s" % name)     
         return
 
+    # 记录链接为服务器链接
+    glog.info("gnet>sub server login sucees: (%s : %d)" % (name, id))
     SUB_SERVER_MAP[name][id] = connection_id
     
-    #* test
+    # test
+    '''
     send(connection_id, ["msgid", "test message"])
     import gevent
     gevent.sleep(2)
     send(connection_id, ["msgid", "test 2"])
-
+    '''
 
 
 

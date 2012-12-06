@@ -32,6 +32,7 @@ def spawn(conn):
     while True:
         try:
             buff = conn.socket.recv(NET_MESSAGE_MAX_LEN)
+        except Exception, e:
             raise e
             _on_disconnect(conn)
             break
