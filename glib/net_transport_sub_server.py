@@ -56,9 +56,8 @@ def init(address, on_connect_callback, on_disconnect_callback, on_data_callback)
     # 链接主服务器
     s =socket.socket()
     s.connect(address)
-    
-    conn = _on_connect(s, address)
-    return conn.connection_id
+    _on_connect(s, address)
+
 
 
 # 循环
@@ -84,8 +83,7 @@ def _on_connect(socket, address):
     if func_on_connect:
         func_on_connect(address, conn.connection_id)
 
-    connection = con
-    return conn
+    connection = conn
 
 
 # 断开连接

@@ -32,11 +32,11 @@ def init(ip, port):
 def init_sub_server(main_ip, main_port, sub_name, sub_id):
     global is_sub_server
     glog.log("server sub_server (%s : %d)" % (sub_name, sub_id)) 
-    conn_id = trans_sub.init((main_ip, main_port), on_connect, on_disconnect, on_data)
+    trans_sub.init((main_ip, main_port), on_connect, on_disconnect, on_data)
     
     # 发送子服务器登录
     msg = msgpack.packb((MSGID_SUB_SERVER_LOGIN, sub_name, sub_id))
-    trans_sub.send(conn_id, msg)
+    trans_sub.send(msg)
 
     is_sub_server = True
 
@@ -71,11 +71,27 @@ def send(connection_id, data):
 
 
 def sends(sub_svr_name, data):
-    global SUB_SERVER_MAP 
+    global SUB_SERVER_MAP, is_sub_server
     glog.log("gnet>[sends] %s %s" % (sub_svr_name, str(data))
+
+    if is_sub_server:
+        glog.error("can NOT do sends()")
+        return
 
     buff = msgpack.packb(data)
     trans.send(SUB_SERVER_MAP[sub_svr_name], buff)
+
+
+def sendm(data):
+    global is_sub_server
+    glog.log("gnet>[sends] %s" % str(data)
+
+    if not is_sub_server:
+        glog.error("can NOT do sendm()")
+        return
+
+    buff = msgpack.packb(data)
+    trans_sub.send(buff)
 
 
 # client连接
