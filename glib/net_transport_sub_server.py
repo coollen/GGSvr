@@ -13,8 +13,8 @@ NET_MESSAGE_MAX_LEN = 1024 * 1024
 # 回调函数(from gnet)
 global func_on_data, func_on_disconnect, func_on_connect
 # 所有连接
-global connections
-connections = {}
+global connection
+connections = None
 
 
 class Connection(object):
@@ -46,7 +46,7 @@ def spawn(conn):
 
 # 初始化
 def init(address, on_connect_callback, on_disconnect_callback, on_data_callback):
-    global connections
+    global connection
     global func_on_data, func_on_disconnect, func_on_connect
 
     func_on_connect = on_connect_callback
@@ -57,55 +57,52 @@ def init(address, on_connect_callback, on_disconnect_callback, on_data_callback)
     s =socket.socket()
     s.connect(address)
     
-    # 放入链接表
-    conn = Connection(s, None)      
-    connections[conn.connection_id] = conn
+    conn = _on_connect(s, address)
     return conn.connection_id
 
 
 # 循环
 def start_loop():
-    global connections          
+    global connection          
     spawns = []
-    for conn_id, conn in connections.iteritems(): 
-        s = gevent.spawn(spawn, conn)
-        spawns.append(s)
+    s = gevent.spawn(spawn, connection)
+    spawns.append(s)
     gevent.joinall(spawns)
 
 
 # 发送数据
-def send(connection_id, buff):
-    global connections
-    conn = connections[connection_id]
-    conn.socket.send(buff)
+def send(buff):
+    global connection
+    connection.socket.send(buff)
 
 
 # 连接
 def _on_connect(socket, address):
-    global func_on_connect
+    global func_on_connect, connection
     conn = Connection(socket, address)
-    connections[conn.connection_id] = conn
-
+    
     if func_on_connect:
         func_on_connect(address, conn.connection_id)
 
+    connection = con
     return conn
 
 
 # 断开连接
 def _on_disconnect(connection):
-    global func_on_disconnect
+    global func_on_disconnect, connection
     conn_id = connection.connection_id
 
     if func_on_disconnect:
         func_on_disconnect(conn_id)
 
-    conn = connections.pop(conn_id)
     try:
-        conn.socket.close()
+        connection.socket.close()
         glog.log("socket close OK")
     except Exception, e:
         raise e
+
+    connection = None
 
 
 # 数据

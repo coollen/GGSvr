@@ -70,12 +70,12 @@ def send(connection_id, data):
     trans.send(connection_id, serialized)
 
 
-def sendss(sub_svr_name, data):
+def sends(sub_svr_name, data):
     global SUB_SERVER_MAP 
-    glog.log("gnet>[sendss] %s %s" % (sub_svr_name, str(data))
+    glog.log("gnet>[sends] %s %s" % (sub_svr_name, str(data))
 
     buff = msgpack.packb(data)
-    trans_sub.send(SUB_SERVER_MAP[sub_svr_name], buff)
+    trans.send(SUB_SERVER_MAP[sub_svr_name], buff)
 
 
 # client连接
