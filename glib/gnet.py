@@ -72,7 +72,7 @@ def send(connection_id, data):
 
 def sends(sub_svr_name, data):
     global SUB_SERVER_MAP, is_sub_server
-    glog.log("gnet>[sends] %s %s" % (sub_svr_name, str(data))
+    glog.log("gnet>[sends] %s %s" % (sub_svr_name, str(data)))
 
     if is_sub_server:
         glog.error("can NOT do sends()")
@@ -84,7 +84,7 @@ def sends(sub_svr_name, data):
 
 def sendm(data):
     global is_sub_server
-    glog.log("gnet>[sends] %s" % str(data)
+    glog.log("gnet>[sends] %s" % str(data))
 
     if not is_sub_server:
         glog.error("can NOT do sendm()")

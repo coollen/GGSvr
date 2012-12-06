@@ -34,13 +34,13 @@ def spawn(conn):
             buff = conn.socket.recv(NET_MESSAGE_MAX_LEN)
         except Exception, e:
             raise e
-            _on_disconnect(conn)
+            _on_disconnect()
             break
         else:
             _on_data(conn, buff)
             gevent.sleep(0)
 
-    _on_disconnection(conn)
+    _on_disconnection()
 
 
 
@@ -87,7 +87,7 @@ def _on_connect(socket, address):
 
 
 # 断开连接
-def _on_disconnect(connection):
+def _on_disconnect():
     global func_on_disconnect, connection
     conn_id = connection.connection_id
 
