@@ -1,0 +1,416 @@
+2012-11-24 23:51:33,777 INFO server at (5018)
+2012-11-24 23:51:33,777 INFO gnet>start_loop ------------------
+2012-11-30 20:33:24,554 INFO server at (5018)
+2012-11-30 20:33:24,558 INFO gnet>start_loop ------------------
+2012-11-30 20:35:30,337 INFO server at (5018)
+2012-11-30 20:35:30,339 INFO gnet>start_loop ------------------
+2012-11-30 20:37:20,798 INFO server at (5018)
+2012-11-30 20:37:20,800 INFO gnet>start_loop ------------------
+2012-11-30 20:45:31,462 INFO server at (5021)
+2012-11-30 20:45:31,463 INFO gnet>start_loop ------------------
+2012-11-30 20:45:41,370 INFO server at (5020)
+2012-11-30 20:45:41,371 INFO gnet>start_loop ------------------
+2012-12-01 20:47:38,820 INFO server sub_server (DB:0)
+2012-12-01 20:48:20,619 INFO server sub_server (DB:0)
+2012-12-01 21:05:45,588 INFO server at (5020)
+2012-12-01 21:06:21,229 INFO server at (5020)
+2012-12-01 21:06:21,237 INFO gnet>start_loop ------------------
+2012-12-01 21:06:37,594 INFO server at (5020)
+2012-12-01 21:06:37,597 INFO gnet>start_loop ------------------
+2012-12-01 21:06:46,085 INFO server sub_server (DB:0)
+2012-12-01 21:08:06,153 INFO server sub_server (DB:0)
+2012-12-01 21:08:06,161 INFO gnet>start_loop ------------------
+2012-12-01 21:10:19,786 INFO server at (5020)
+2012-12-01 21:10:19,787 INFO gnet>start_loop ------------------
+2012-12-01 21:10:23,777 INFO server sub_server (DB:0)
+2012-12-01 21:10:23,779 INFO on_connect:('127.0.0.1', 60991):<socket fileno=5 sock=127.0.0.1:5020 peer=127.0.0.1:60991>
+2012-12-01 21:10:23,780 INFO gnet>start_loop ------------------
+2012-12-01 21:11:03,947 INFO server at (5020)
+2012-12-01 21:11:03,948 INFO gnet>start_loop ------------------
+2012-12-01 21:11:06,683 INFO server sub_server (DB:0)
+2012-12-01 21:11:06,687 INFO on_connect:('127.0.0.1', 60992):<socket fileno=5 sock=127.0.0.1:5020 peer=127.0.0.1:60992>
+2012-12-01 21:11:06,688 INFO gnet>[recv]['SUB_SERVER_LOGIN', 'DB', 0]
+2012-12-01 21:11:06,688 INFO gnet>start_loop ------------------
+2012-12-01 21:13:05,498 INFO server at (5020)
+2012-12-01 21:13:05,499 INFO gnet>start_loop ------------------
+2012-12-01 21:13:08,267 INFO server sub_server (DB:0)
+2012-12-01 21:13:08,269 INFO on_connect:('127.0.0.1', 60993):<socket fileno=5 sock=127.0.0.1:5020 peer=127.0.0.1:60993>
+2012-12-01 21:13:08,269 INFO gnet>[recv]['SUB_SERVER_LOGIN', 'DB', 0]
+2012-12-01 21:13:08,269 ERROR gnet>on_sub_server_login sub_server NOT def:DB
+2012-12-01 21:13:08,270 INFO gnet>start_loop ------------------
+2012-12-01 21:14:54,906 INFO server at (5020)
+2012-12-01 21:15:10,885 INFO server at (5020)
+2012-12-01 21:15:10,886 INFO gnet>start_loop ------------------
+2012-12-01 21:15:13,079 INFO server sub_server (DB:0)
+2012-12-01 21:15:13,080 INFO on_connect:('127.0.0.1', 60994):<socket fileno=5 sock=127.0.0.1:5020 peer=127.0.0.1:60994>
+2012-12-01 21:15:13,080 INFO gnet>[recv]['SUB_SERVER_LOGIN', 'DB', 0]
+2012-12-01 21:15:13,081 INFO gnet>start_loop ------------------
+2012-12-01 21:17:16,017 INFO server at (5020)
+2012-12-01 21:17:16,018 INFO gnet>start_loop ------------------
+2012-12-01 21:17:18,518 INFO server sub_server (DB:0)
+2012-12-01 21:17:18,622 INFO on_connect:('127.0.0.1', 60995):<socket fileno=5 sock=127.0.0.1:5020 peer=127.0.0.1:60995>
+2012-12-01 21:17:18,623 INFO gnet>[recv]['SUB_SERVER_LOGIN', 'DB', 0]
+2012-12-01 21:17:18,624 INFO gnet>start_loop ------------------
+2012-12-01 21:20:47,641 INFO server at ( : 5020)
+2012-12-01 21:20:47,642 INFO gnet>start_loop ------------------
+2012-12-01 21:20:49,313 INFO server sub_server (DB : 0)
+2012-12-01 21:20:49,315 INFO gnet>start_loop ------------------
+2012-12-01 21:26:34,482 INFO server at ( : 5020)
+2012-12-01 21:26:34,483 INFO gnet>start_loop ------------------
+2012-12-01 21:26:36,769 INFO server sub_server (DB : 0)
+2012-12-01 21:26:36,769 INFO on_connect: ('127.0.0.1', 60997) 140267047011408
+2012-12-01 21:26:36,770 INFO gnet>[recv]['SUB_SERVER_LOGIN', 'DB', 0]
+2012-12-01 21:26:36,770 INFO gnet>[send] 140267047011408 db msg test
+2012-12-01 21:26:36,771 INFO gnet>start_loop ------------------
+2012-12-01 21:31:13,777 INFO server at ( : 5020)
+2012-12-01 21:31:13,778 INFO gnet>start_loop ------------------
+2012-12-01 21:31:17,003 INFO server sub_server (DB : 0)
+2012-12-01 21:31:17,007 INFO on_connect: ('127.0.0.1', 60998) 43230352
+2012-12-01 21:31:17,007 INFO gnet>[recv]['SUB_SERVER_LOGIN', 'DB', 0]
+2012-12-01 21:31:17,007 INFO gnet>[send] 43230352 db msg test
+2012-12-01 21:31:17,007 INFO gnet>start_loop ------------------
+2012-12-01 22:54:46,295 INFO server at ( : 5020)
+2012-12-01 22:54:46,296 INFO gnet>start_loop ------------------
+2012-12-01 22:54:48,460 INFO server sub_server (DB : 0)
+2012-12-01 22:54:48,464 INFO on_connect: ('127.0.0.1', 60999) 20522128
+2012-12-01 22:54:48,465 INFO gnet>[recv]['SUB_SERVER_LOGIN', 'DB', 0]
+2012-12-01 22:54:48,465 INFO gnet>[send] 20522128 db msg test
+2012-12-01 22:54:48,466 INFO gnet>start_loop ------------------
+2012-12-01 22:58:25,144 INFO server at ( : 5020)
+2012-12-01 22:58:25,145 INFO gnet>start_loop ------------------
+2012-12-01 22:59:28,898 INFO on_connect: ('127.0.0.1', 32768) 22365328
+2012-12-01 22:59:35,795 INFO on_connect: ('127.0.0.1', 32769) 22508816
+2012-12-01 22:59:54,848 INFO gnet>[recv][4096, 'test msg']
+2012-12-01 22:59:57,854 INFO gnet>[send] 22508816 ['test msg']
+2012-12-01 22:59:57,854 INFO gnet>[recv][4096, 'test msg']
+2012-12-01 23:00:00,860 INFO gnet>[send] 22508816 ['test msg']
+2012-12-01 23:00:00,860 INFO gnet>[recv][4096, 'test msg']
+2012-12-01 23:00:03,867 INFO gnet>[send] 22508816 ['test msg']
+2012-12-01 23:00:21,905 INFO on_connect: ('127.0.0.1', 32770) 22508880
+2012-12-01 23:00:34,719 INFO gnet>[recv][4096, 'test msg']
+2012-12-01 23:00:37,725 INFO gnet>[send] 22508880 ['test msg']
+2012-12-01 23:42:40,731 INFO server at ( : 5020)
+2012-12-01 23:42:40,732 INFO gnet>start_loop ------------------
+2012-12-01 23:42:52,722 INFO on_connect: ('127.0.0.1', 32771) 140055818822992
+2012-12-01 23:43:23,059 INFO server sub_server (DB : 0)
+2012-12-01 23:44:48,030 INFO server at ( : 5020)
+2012-12-01 23:44:48,031 INFO gnet>start_loop ------------------
+2012-12-01 23:44:52,166 INFO server sub_server (DB : 0)
+2012-12-01 23:45:57,998 INFO server at ( : 5020)
+2012-12-01 23:45:57,999 INFO gnet>start_loop ------------------
+2012-12-01 23:46:00,556 INFO server sub_server (DB : 0)
+2012-12-01 23:46:52,730 INFO server sub_server (DB : 0)
+2012-12-01 23:46:52,731 INFO on_connect: ('127.0.0.1', 32772) 46368080
+2012-12-01 23:46:56,339 INFO server at ( : 5020)
+2012-12-01 23:46:56,340 INFO gnet>start_loop ------------------
+2012-12-01 23:47:27,413 INFO server sub_server (DB : 0)
+2012-12-01 23:47:40,035 INFO server sub_server (DB : 0)
+2012-12-01 23:47:40,037 INFO on_connect: ('127.0.0.1', 32773) 140362801280464
+2012-12-01 23:51:40,356 INFO server sub_server (DB : 0)
+2012-12-01 23:51:40,358 INFO on_connect: ('127.0.0.1', 32774) 140362800809360
+2012-12-01 23:52:44,717 INFO server sub_server (DB : 0)
+2012-12-01 23:52:44,718 INFO on_connect: ('127.0.0.1', 32775) 140362800809424
+2012-12-01 23:52:44,719 INFO gnet>[recv]['SUB_SERVER_LOGIN', 'DB', 0]
+2012-12-01 23:52:44,719 INFO gnet>[send] 140362800809424 db msg test
+2012-12-01 23:52:44,720 INFO gnet>start_loop ------------------
+2012-12-02 00:01:46,453 INFO server at ( : 5020)
+2012-12-02 00:01:46,454 INFO gnet>start_loop ------------------
+2012-12-02 00:01:48,987 INFO server sub_server (DB : 0)
+2012-12-02 00:01:48,989 INFO on_connect: ('127.0.0.1', 32776) 140035196945808
+2012-12-02 00:01:48,991 INFO gnet>[recv]['SUB_SERVER_LOGIN', 'DB', 0]
+2012-12-02 00:01:48,991 INFO gnet>[send] 140035196945808 db msg test
+2012-12-02 00:01:48,992 INFO gnet>start_loop ------------------
+2012-12-02 00:02:38,253 INFO server at ( : 5020)
+2012-12-02 00:02:38,254 INFO gnet>start_loop ------------------
+2012-12-02 00:02:40,986 INFO server sub_server (DB : 0)
+2012-12-02 00:02:40,989 INFO on_connect: ('127.0.0.1', 32777) 43025808
+2012-12-02 00:02:40,989 INFO gnet>[recv]['SUB_SERVER_LOGIN', 'DB', 0]
+2012-12-02 00:02:40,990 INFO gnet>[send] 43025808 db msg test
+2012-12-02 00:02:40,990 INFO gnet>start_loop ------------------
+2012-12-02 00:10:13,733 INFO server sub_server (DB : 0)
+2012-12-02 00:10:13,734 INFO on_connect: ('127.0.0.1', 32778) 43089808
+2012-12-02 00:10:13,735 INFO gnet>[recv]['SUB_SERVER_LOGIN', 'DB', 0]
+2012-12-02 00:10:13,735 INFO gnet>[send] 43089808 db msg test
+2012-12-02 00:10:13,736 INFO gnet>start_loop ------------------
+2012-12-02 00:14:08,091 INFO server sub_server (DB : 0)
+2012-12-02 00:14:08,092 INFO on_connect: ('127.0.0.1', 32779) 43114576
+2012-12-02 00:14:08,092 INFO gnet>[recv]['SUB_SERVER_LOGIN', 'DB', 0]
+2012-12-02 00:14:08,092 INFO gnet>[send] 43114576 db msg test
+2012-12-02 00:14:08,093 INFO gnet>start_loop ------------------
+2012-12-02 00:16:32,810 INFO server sub_server (DB : 0)
+2012-12-02 00:16:32,811 INFO on_connect: ('127.0.0.1', 32780) 43114768
+2012-12-02 00:16:32,812 INFO gnet>[recv]['SUB_SERVER_LOGIN', 'DB', 0]
+2012-12-02 00:16:32,812 INFO gnet>[send] 43114768 db msg test
+2012-12-02 00:16:32,812 INFO gnet>start_loop ------------------
+2012-12-02 00:18:55,342 INFO server at ( : 5020)
+2012-12-02 00:18:55,343 INFO gnet>start_loop ------------------
+2012-12-02 00:18:57,464 INFO server sub_server (DB : 0)
+2012-12-02 00:18:57,465 INFO on_connect: ('127.0.0.1', 32781) 42624336
+2012-12-02 00:18:57,465 INFO gnet>[recv]['SUB_SERVER_LOGIN', 'DB', 0]
+2012-12-02 00:18:57,466 INFO gnet>start_loop ------------------
+2012-12-02 00:18:57,466 INFO gnet>[send] 42624336 db msg test
+2012-12-02 00:19:18,602 INFO server at ( : 5020)
+2012-12-02 00:19:18,603 INFO gnet>start_loop ------------------
+2012-12-02 00:19:20,492 INFO server sub_server (DB : 0)
+2012-12-02 00:19:20,493 INFO on_connect: ('127.0.0.1', 32782) 32666960
+2012-12-02 00:19:20,494 INFO gnet>[recv]['SUB_SERVER_LOGIN', 'DB', 0]
+2012-12-02 00:19:20,494 INFO gnet>[send] 32666960 db msg test
+2012-12-02 00:19:20,496 INFO gnet>start_loop ------------------
+2012-12-02 00:19:52,310 INFO server sub_server (DB : 0)
+2012-12-02 00:19:52,311 INFO on_connect: ('127.0.0.1', 32783) 32735056
+2012-12-02 00:19:52,311 INFO gnet>[recv]['SUB_SERVER_LOGIN', 'DB', 0]
+2012-12-02 00:19:52,312 INFO gnet>[send] 32735056 db msg test
+2012-12-02 00:19:52,312 INFO gnet>start_loop ------------------
+2012-12-02 00:19:52,314 INFO gnet>[recv]['d', 'b', ' ', 'm', 's', 'g', ' ', 't', 'e', 's', 't']
+2012-12-02 00:20:48,121 INFO server at ( : 5020)
+2012-12-02 00:20:48,122 INFO gnet>start_loop ------------------
+2012-12-02 00:20:50,225 INFO server sub_server (DB : 0)
+2012-12-02 00:20:50,226 INFO on_connect: ('127.0.0.1', 32784) 18802000
+2012-12-02 00:20:50,227 INFO gnet>[recv]['SUB_SERVER_LOGIN', 'DB', 0]
+2012-12-02 00:20:50,227 INFO gnet>[send] 18802000 db msg test
+2012-12-02 00:20:50,228 INFO gnet>start_loop ------------------
+2012-12-02 00:20:50,229 INFO gnet>[recv]['d', 'b', ' ', 'm', 's', 'g', ' ', 't', 'e', 's', 't']
+2012-12-02 00:21:23,382 INFO server at ( : 5020)
+2012-12-02 00:21:23,383 INFO gnet>start_loop ------------------
+2012-12-02 00:21:25,391 INFO server sub_server (DB : 0)
+2012-12-02 00:21:25,392 INFO on_connect: ('127.0.0.1', 32785) 20702544
+2012-12-02 00:21:25,392 INFO gnet>[recv]['SUB_SERVER_LOGIN', 'DB', 0]
+2012-12-02 00:21:25,392 INFO gnet>[send] 20702544 db msg test
+2012-12-02 00:21:25,393 INFO gnet>start_loop ------------------
+2012-12-02 00:21:25,395 INFO gnet>[recv]['d', 'b', ' ', 'm', 's', 'g', ' ', 't', 'e', 's', 't']
+2012-12-02 00:21:25,395 ERROR gnet>on_data msgid not in MSG_MAP|msgid:d
+2012-12-02 00:23:37,399 INFO server at ( : 5020)
+2012-12-02 00:23:37,400 INFO gnet>start_loop ------------------
+2012-12-02 00:23:39,305 INFO server sub_server (DB : 0)
+2012-12-02 00:23:39,306 INFO on_connect: ('127.0.0.1', 32786) 48702800
+2012-12-02 00:23:39,306 INFO gnet>[recv]['SUB_SERVER_LOGIN', 'DB', 0]
+2012-12-02 00:23:39,307 INFO gnet>[send] 48702800 ’¥msgid¬test message
+2012-12-02 00:23:39,307 INFO gnet>start_loop ------------------
+2012-12-02 00:23:39,309 INFO gnet>[recv]['\x92', '\xa5', 'm', 's', 'g', 'i', 'd', '\xac', 't', 'e', 's', 't', ' ', 'm', 'e', 's', 's', 'a', 'g', 'e']
+2012-12-02 00:23:39,309 ERROR gnet>on_data msgid not in MSG_MAP|msgid:’
+2012-12-02 00:27:07,049 INFO server at ( : 5020)
+2012-12-02 00:27:07,050 INFO gnet>start_loop ------------------
+2012-12-02 00:27:09,783 INFO server sub_server (DB : 0)
+2012-12-02 00:27:09,784 INFO on_connect: ('127.0.0.1', 32787) 30795152
+2012-12-02 00:27:09,784 INFO gnet>[recv] ['SUB_SERVER_LOGIN', 'DB', 0]
+2012-12-02 00:27:09,784 INFO gnet>[send] 30795152 ’¥msgid¬test message
+2012-12-02 00:27:09,785 INFO gnet>start_loop ------------------
+2012-12-02 00:27:09,787 INFO gnet>[recv] ['\x92', '\xa5', 'm', 's', 'g', 'i', 'd', '\xac', 't', 'e', 's', 't', ' ', 'm', 'e', 's', 's', 'a', 'g', 'e']
+2012-12-02 00:27:09,787 ERROR gnet>on_data msgid not in MSG_MAP|msgid:’
+2012-12-02 00:29:06,547 INFO server at ( : 5020)
+2012-12-02 00:29:06,548 INFO gnet>start_loop ------------------
+2012-12-02 00:29:08,774 INFO server sub_server (DB : 0)
+2012-12-02 00:29:08,774 INFO on_connect: ('127.0.0.1', 32788) 29169040
+2012-12-02 00:29:08,775 INFO gnet>[recv] ['SUB_SERVER_LOGIN', 'DB', 0]
+2012-12-02 00:29:08,775 INFO gnet>[send] 29169040 ['msgid', 'test message']
+2012-12-02 00:29:08,775 INFO gnet>start_loop ------------------
+2012-12-02 00:29:08,776 INFO gnet>[recv] ['msgid', 'test message']
+2012-12-02 00:29:08,777 ERROR gnet>on_data msgid not in MSG_MAP|msgid:msgid
+2012-12-02 00:29:56,704 INFO server at ( : 5020)
+2012-12-02 00:29:56,705 INFO gnet>start_loop ------------------
+2012-12-02 00:29:58,769 INFO server sub_server (DB : 0)
+2012-12-02 00:29:58,770 INFO on_connect: ('127.0.0.1', 32789) 33965456
+2012-12-02 00:29:58,771 INFO gnet>[recv] ['SUB_SERVER_LOGIN', 'DB', 0]
+2012-12-02 00:29:58,771 INFO gnet>[send] 33965456 ['msgid', 'test message']
+2012-12-02 00:29:58,772 INFO gnet>start_loop ------------------
+2012-12-02 00:29:58,773 INFO gnet>[recv] ['msgid', 'test message']
+2012-12-02 00:29:58,773 ERROR gnet>on_data msgid not in MSG_MAP|msgid:msgid
+2012-12-02 00:30:12,870 INFO server at ( : 5020)
+2012-12-02 00:30:12,871 INFO gnet>start_loop ------------------
+2012-12-02 00:30:14,751 INFO server sub_server (DB : 0)
+2012-12-02 00:30:14,752 INFO on_connect: ('127.0.0.1', 32790) 24671632
+2012-12-02 00:30:14,752 INFO gnet>[recv] ['SUB_SERVER_LOGIN', 'DB', 0]
+2012-12-02 00:30:14,753 INFO gnet>[send] 24671632 ['msgid', 'test message']
+2012-12-02 00:30:14,753 INFO gnet>start_loop ------------------
+2012-12-02 00:30:14,755 INFO gnet>[recv] ['msgid', 'test message']
+2012-12-02 00:30:14,755 ERROR gnet>on_data msgid not in MSG_MAP|msgid:msgid
+2012-12-02 00:30:27,614 INFO server at ( : 5020)
+2012-12-02 00:30:27,615 INFO gnet>start_loop ------------------
+2012-12-02 00:30:29,690 INFO server sub_server (DB : 0)
+2012-12-02 00:30:29,692 INFO on_connect: ('127.0.0.1', 32791) 50382224
+2012-12-02 00:30:29,693 INFO gnet>[recv] ['SUB_SERVER_LOGIN', 'DB', 0]
+2012-12-02 00:30:29,693 INFO gnet>[send] 50382224 ['msgid', 'test message']
+2012-12-02 00:30:29,694 INFO gnet>start_loop ------------------
+2012-12-02 00:30:29,696 INFO gnet>[recv] ['msgid', 'test message']
+2012-12-02 00:30:29,696 ERROR gnet>on_data msgid not in MSG_MAP|msgid:msgid
+2012-12-02 00:30:31,697 INFO gnet>[send] 50382224 ['msgid', 'test 2']
+2012-12-02 00:30:31,697 INFO gnet>[recv] ['msgid', 'test 2']
+2012-12-02 00:30:31,697 ERROR gnet>on_data msgid not in MSG_MAP|msgid:msgid
+2012-12-05 23:11:14,550 INFO server at ( : 5020)
+2012-12-05 23:11:14,558 INFO gnet>start_loop ------------------
+2012-12-05 23:11:26,986 INFO server sub_server (DB : 0)
+2012-12-05 23:11:26,988 INFO on_connect: ('127.0.0.1', 48527) 43848976
+2012-12-05 23:11:26,988 INFO gnet>[recv] ['SUB_SERVER_LOGIN', 'DB', 0]
+2012-12-05 23:11:26,988 INFO gnet>sub server login sucees: DB[0]
+2012-12-05 23:11:26,990 INFO gnet>start_loop ------------------
+2012-12-05 23:12:23,968 INFO server at ( : 5020)
+2012-12-05 23:12:23,969 INFO gnet>start_loop ------------------
+2012-12-05 23:12:29,029 INFO server sub_server (DB : 0)
+2012-12-05 23:12:29,030 INFO on_connect: ('127.0.0.1', 48528) 21419408
+2012-12-05 23:12:29,030 INFO gnet>[recv] ['SUB_SERVER_LOGIN', 'DB', 0]
+2012-12-05 23:12:29,030 INFO gnet>sub server login sucees: (DB : 0)
+2012-12-05 23:12:29,031 INFO gnet>start_loop ------------------
+2012-12-06 06:08:58,861 INFO server at ( : 5020)
+2012-12-06 06:08:58,864 INFO gnet>start_loop ------------------
+2012-12-06 06:09:02,114 INFO server sub_server (DB : 0)
+2012-12-06 06:09:02,116 INFO on_connect: ('127.0.0.1', 48566) 21882320
+2012-12-06 06:09:02,117 INFO on_connect: ('', 5020) 28930128
+2012-12-06 06:09:02,117 INFO gnet>[recv] ['SUB_SERVER_LOGIN', 'DB', 0]
+2012-12-06 06:09:02,117 INFO gnet>sub server login sucees: (DB : 0)
+2012-12-06 06:09:02,120 INFO gnet>start_loop ------------------
+2012-12-07 06:27:03,254 INFO server sub_server (DB : 0)
+2012-12-07 06:27:12,909 INFO server at ( : 5020)
+2012-12-07 06:27:12,917 INFO gnet>start_loop ------------------
+2012-12-07 06:27:15,193 INFO server sub_server (DB : 0)
+2012-12-07 06:27:15,194 INFO on_connect: ('127.0.0.1', 36637) 48805392
+2012-12-07 06:27:15,195 INFO on_connect: ('', 5020) 28139920
+2012-12-07 06:27:15,195 INFO gnet>[recv] ['SUB_SERVER_LOGIN', 'DB', 0]
+2012-12-07 06:27:15,195 INFO gnet>sub server login sucees: (DB : 0)
+2012-12-07 06:27:15,199 INFO gnet>start_loop ------------------
+2012-12-07 06:40:25,734 INFO server at ( : 5020)
+2012-12-07 06:41:38,294 INFO server at ( : 5020)
+2012-12-07 06:42:28,088 INFO server at ( : 5020)
+2012-12-07 06:44:49,870 INFO server at ( : 5020)
+2012-12-07 06:44:49,872 INFO gnet>start_loop ------------------
+2012-12-07 06:44:52,932 INFO server sub_server (DB : 0)
+2012-12-07 06:44:52,933 INFO on_connect: ('127.0.0.1', 36638) 25785808
+2012-12-07 06:44:52,933 INFO on_connect: ('', 5020) 51003792
+2012-12-07 06:44:52,933 INFO gnet>[recv] ['SUB_SERVER_LOGIN', 'DB', 0]
+2012-12-07 06:44:52,933 INFO gnet>sub server login sucees: (DB : 0)
+2012-12-07 06:44:52,934 INFO gnet>start_loop ------------------
+2012-12-07 06:45:08,360 INFO on_connect: ('127.0.0.1', 36639) 25786576
+2012-12-07 06:45:43,894 INFO on_connect: ('127.0.0.1', 36640) 25885392
+2012-12-07 06:45:50,311 INFO gnet>[recv] [4096, 'test msg']
+2012-12-07 06:45:53,316 INFO gnet>[sends] DB ['test msg']
+2012-12-07 06:50:02,506 INFO server at ( : 5020)
+2012-12-07 06:50:02,508 INFO gnet>start_loop ------------------
+2012-12-07 06:50:05,259 INFO server sub_server (DB : 0)
+2012-12-07 06:50:05,260 INFO on_connect: ('', 5020) 34849168
+2012-12-07 06:50:05,260 INFO on_connect: ('127.0.0.1', 36641) 44504528
+2012-12-07 06:50:05,260 INFO gnet>[recv] ['SUB_SERVER_LOGIN', 'DB', 0]
+2012-12-07 06:50:05,260 INFO gnet>sub server login sucees: (DB : 0)
+2012-12-07 06:50:05,261 INFO gnet>start_loop ------------------
+2012-12-07 06:50:25,126 INFO on_connect: ('127.0.0.1', 36642) 44505232
+2012-12-07 06:50:29,303 INFO gnet>[recv] [4096, 'test msg']
+2012-12-07 06:50:32,310 INFO gnet>[sends] DB ['test msg']
+2012-12-07 06:50:32,310 INFO gnet>[recv] ['test msg']
+2012-12-07 06:50:32,310 ERROR gnet>on_data msgid not in MSG_MAP|msgid:test msg
+2012-12-07 06:53:32,734 INFO server at ( : 5020)
+2012-12-07 06:53:32,735 INFO gnet>start_loop ------------------
+2012-12-07 06:53:34,627 INFO server sub_server (DB : 0)
+2012-12-07 06:53:34,627 INFO on_connect: ('', 5020) 47059344
+2012-12-07 06:53:34,628 INFO on_connect: ('127.0.0.1', 36643) 140116119139792
+2012-12-07 06:53:34,628 INFO gnet>[recv] ['SUB_SERVER_LOGIN', 'DB', 0]
+2012-12-07 06:53:34,628 INFO gnet>sub server login sucees: (DB : 0)
+2012-12-07 06:53:34,629 INFO gnet>start_loop ------------------
+2012-12-07 06:53:42,126 INFO on_connect: ('127.0.0.1', 36644) 140116119140496
+2012-12-07 06:53:44,800 INFO gnet>[recv] [4096, 'test msg']
+2012-12-07 06:53:47,807 INFO gnet>[sends] DB [4097, 'test msg']
+2012-12-07 06:53:47,807 INFO gnet>[recv] [4097, 'test msg']
+2012-12-07 06:53:47,808 ERROR gnet>on_data msgid not in MSG_MAP|msgid:4097
+2012-12-07 06:56:34,461 INFO server at ( : 5020)
+2012-12-07 06:56:34,462 INFO gnet>start_loop ------------------
+2012-12-07 06:56:39,402 INFO server sub_server (DB : 0)
+2012-12-07 06:56:39,403 INFO on_connect: ('', 5020) 29864336
+2012-12-07 06:56:39,403 INFO on_connect: ('127.0.0.1', 36645) 140066998502992
+2012-12-07 06:56:39,403 INFO gnet>[recv] ['SUB_SERVER_LOGIN', 'DB', 0]
+2012-12-07 06:56:39,403 INFO gnet>sub server login sucees: (DB : 0)
+2012-12-07 06:56:39,404 INFO gnet>start_loop ------------------
+2012-12-07 06:56:48,366 INFO on_connect: ('127.0.0.1', 36646) 140066998503696
+2012-12-07 06:56:50,503 INFO gnet>[recv] [4096, 'test msg']
+2012-12-07 06:56:53,509 INFO gnet>[sends] DB [4097, 'test msg']
+2012-12-07 06:56:53,509 INFO gnet>[recv] [4097, 'test msg']
+2012-12-07 06:56:53,509 ERROR gnet>on_data msgid not in MSG_MAP|msgid:4097
+2012-12-07 06:58:14,505 INFO server sub_server (DB : 0)
+2012-12-07 06:58:14,506 INFO on_connect: ('127.0.0.1', 36647) 140066998037264
+2012-12-07 06:58:14,506 INFO on_connect: ('', 5020) 26001808
+2012-12-07 06:58:14,507 INFO gnet>[recv] ['SUB_SERVER_LOGIN', 'DB', 0]
+2012-12-07 06:58:14,507 INFO gnet>sub server login sucees: (DB : 0)
+2012-12-07 06:58:14,508 INFO gnet>start_loop ------------------
+2012-12-07 07:32:24,757 INFO server sub_server (DB : 0)
+2012-12-07 07:32:24,758 INFO on_connect: ('127.0.0.1', 36648) 140066998037328
+2012-12-07 07:32:24,758 INFO on_connect: ('', 5020) 30429584
+2012-12-07 07:32:24,758 INFO gnet>[recv] ['SUB_SERVER_LOGIN', 'DB', 0]
+2012-12-07 07:32:24,759 INFO gnet>sub server login sucees: (DB : 0)
+2012-12-07 07:32:24,760 INFO gnet>start_loop ------------------
+2012-12-07 07:33:39,037 INFO on_connect: ('127.0.0.1', 36649) 140066998037456
+2012-12-07 07:35:00,002 INFO server sub_server (DB : 0)
+2012-12-07 07:35:00,003 INFO on_connect: ('', 5020) 49832336
+2012-12-07 07:35:00,003 INFO on_connect: ('127.0.0.1', 36650) 140066998037200
+2012-12-07 07:35:00,003 INFO gnet>[recv] ['SUB_SERVER_LOGIN', 'DB', 0]
+2012-12-07 07:35:00,003 INFO gnet>sub server login sucees: (DB : 0)
+2012-12-07 07:35:00,006 INFO gnet>start_loop ------------------
+2012-12-07 07:35:04,011 INFO on_connect: ('127.0.0.1', 36651) 140066998037776
+2012-12-07 07:35:05,306 INFO gnet>[recv] [4096, 'test msg']
+2012-12-07 07:35:08,313 INFO gnet>[sends] DB [4097, 'test msg']
+2012-12-07 07:35:08,313 INFO gnet>[recv] [4097, 'test msg']
+2012-12-07 07:36:01,220 INFO server sub_server (DB : 0)
+2012-12-07 07:36:01,221 INFO on_connect: ('', 5020) 20894096
+2012-12-07 07:36:01,221 INFO on_connect: ('127.0.0.1', 36652) 140066998037840
+2012-12-07 07:36:01,221 INFO gnet>[recv] ['SUB_SERVER_LOGIN', 'DB', 0]
+2012-12-07 07:36:01,221 INFO gnet>sub server login sucees: (DB : 0)
+2012-12-07 07:36:01,222 INFO gnet>start_loop ------------------
+2012-12-07 07:36:06,065 INFO gnet>[recv] [4096, 'test msg']
+2012-12-07 07:36:09,072 INFO gnet>[sends] DB [4097, 'test msg']
+2012-12-07 07:36:09,073 INFO gnet>[recv] [4097, 'test msg']
+2012-12-07 07:36:10,075 INFO gnet>[sends] [4097, '11111111']
+2012-12-07 07:36:10,075 INFO gnet>[recv] [4097, '11111111']
+2012-12-07 07:36:13,084 INFO gnet>[send] 140066998037776 [4096, 'on_test_sub return']
+2012-12-07 07:39:11,138 INFO on_connect: ('127.0.0.1', 36653) 140066998037712
+2012-12-07 07:39:24,162 INFO server at ( : 5020)
+2012-12-07 07:39:24,164 INFO gnet>start_loop ------------------
+2012-12-07 07:39:28,666 INFO server sub_server (DB : 0)
+2012-12-07 07:39:28,666 INFO on_connect: ('127.0.0.1', 36654) 139927956231632
+2012-12-07 07:39:28,667 INFO on_connect: ('', 5020) 23028112
+2012-12-07 07:39:28,667 INFO gnet>[recv] ['SUB_SERVER_LOGIN', 'DB', 0]
+2012-12-07 07:39:28,667 INFO gnet>sub server login sucees: (DB : 0)
+2012-12-07 07:39:28,668 INFO gnet>start_loop ------------------
+2012-12-07 07:39:37,231 INFO on_connect: ('127.0.0.1', 36655) 139927956232336
+2012-12-07 07:39:38,922 INFO gnet>[recv] [4096, 'client -> main']
+2012-12-07 07:39:41,929 INFO gnet>[sends] DB [4097, 'mian -> sub']
+2012-12-07 07:39:41,930 INFO gnet>[recv] [4097, 'mian -> sub']
+2012-12-07 07:39:42,933 INFO gnet>[sends] [4097, 'sub->main']
+2012-12-07 07:39:42,934 INFO gnet>[recv] [4097, 'sub->main']
+2012-12-07 07:39:45,942 INFO gnet>[send] 139927956232336 [4096, 'main -> client']
+2012-12-07 07:42:16,609 INFO on_connect: ('127.0.0.1', 36656) 139927955761808
+2012-12-07 07:42:29,474 INFO on_connect: ('127.0.0.1', 36657) 139927955761872
+2012-12-07 07:42:59,323 INFO on_connect: ('127.0.0.1', 36658) 139927955762000
+2012-12-07 07:44:18,290 INFO server at ( : 5020)
+2012-12-07 07:44:18,292 INFO gnet>start_loop ------------------
+2012-12-07 07:44:20,355 INFO server sub_server (DB : 0)
+2012-12-07 07:44:20,356 INFO on_connect: ('127.0.0.1', 36659) 140074925397584
+2012-12-07 07:44:20,357 INFO on_connect: ('', 5020) 50270608
+2012-12-07 07:44:20,357 INFO gnet>[recv] ['SUB_SERVER_LOGIN', 'DB', 0]
+2012-12-07 07:44:20,357 INFO gnet>sub server login sucees: (DB : 0)
+2012-12-07 07:44:20,358 INFO gnet>start_loop ------------------
+2012-12-07 07:44:29,625 INFO on_connect: ('127.0.0.1', 36660) 140074925398288
+2012-12-07 07:44:31,721 INFO gnet>[recv] [4096, 'client -> main']
+2012-12-07 07:44:34,731 INFO gnet>[sends] DB [4097, 'mian -> sub']
+2012-12-07 07:44:34,732 INFO gnet>[recv] [4097, 'mian -> sub']
+2012-12-07 07:44:35,736 INFO gnet>[sends] [4097, 'sub->main']
+2012-12-07 07:44:35,737 INFO gnet>[recv] [4097, 'sub->main']
+2012-12-07 07:44:38,746 INFO gnet>[send] 140074925398288 [4096, 'main -> client']
+2012-12-07 07:45:21,234 INFO server sub_server (DB : 0)
+2012-12-07 07:45:21,235 INFO on_connect: ('127.0.0.1', 36661) 140074924931856
+2012-12-07 07:45:21,235 INFO on_connect: ('', 5020) 38957456
+2012-12-07 07:45:21,235 INFO gnet>[recv] ['SUB_SERVER_LOGIN', 'DB', 0]
+2012-12-07 07:45:21,235 INFO gnet>sub server login sucees: (DB : 0)
+2012-12-07 07:45:21,237 INFO gnet>start_loop ------------------
+2012-12-07 07:45:27,017 INFO gnet>[recv] [4096, 'client -> main']
+2012-12-07 07:45:30,025 INFO gnet>[sends] DB [4097, 'mian -> sub']
+2012-12-07 07:45:30,025 INFO gnet>[recv] [4097, 'mian -> sub']
+2012-12-07 07:45:33,033 INFO gnet>[sends] [4097, 'sub->main']
+2012-12-07 07:45:33,033 INFO gnet>[recv] [4097, 'sub->main']
+2012-12-07 07:45:36,040 INFO gnet>[send] 140074925398288 [4096, 'main -> client']
+2012-12-07 07:46:31,737 INFO server sub_server (DB : 0)
+2012-12-07 07:46:31,738 INFO on_connect: ('', 5020) 28447120
+2012-12-07 07:46:31,738 INFO on_connect: ('127.0.0.1', 36662) 140074924931920
+2012-12-07 07:46:31,738 INFO gnet>[recv] ['SUB_SERVER_LOGIN', 'DB', 0]
+2012-12-07 07:46:31,738 INFO gnet>sub server login sucees: (DB : 0)
+2012-12-07 07:46:31,740 INFO gnet>start_loop ------------------
+2012-12-07 07:46:36,242 INFO gnet>[recv] [4096, 'client -> main']
+2012-12-07 07:46:39,249 INFO gnet>[sends] DB [4097, 'mian -> sub']
+2012-12-07 07:46:39,249 INFO gnet>[recv] [4097, 'mian -> sub']
+2012-12-07 07:46:42,258 INFO gnet>[sends] [4097, 'sub -> main']
+2012-12-07 07:46:42,258 INFO gnet>[recv] [4097, 'sub -> main']
+2012-12-07 07:46:45,266 INFO gnet>[send] 140074925398288 [4096, 'main -> client']

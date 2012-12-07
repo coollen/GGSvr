@@ -27,8 +27,6 @@ patch_sys_path()
 
 # ------------------------------
 import gconfig, gnet, glog, gdb
-#import account_mgr, player_mgr
-#import db_tables
 
 def main():
 
@@ -40,19 +38,14 @@ def main():
     glog.init()
 
     # 网络
-    gnet.init(gconfig.SVR_MAIN_IP, gconfig.SVR_MAIN_PORT)
-    gnet.def_sub_server(gconfig.SVR_SUB_NAME)
+    gnet.init_sub_server(gconfig.SVR_MAIN_IP, gconfig.SVR_MAIN_PORT, gconfig.SVR_SUB_NAME, gconfig.SVR_SUB_ID)
 
     # 数据库
     #gdb.init()
 
-    # mgr
-    #account_mgr.init()
-    #player_mgr.init()
-
-    # 游戏逻辑
-    import svr_main
-    svr_main.init()
+    # db server
+    import svr_sub
+    svr_sub.init()
 
     # 开始服务
     gnet.start_loop()

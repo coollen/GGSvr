@@ -6,8 +6,8 @@
 SVR_MAIN_IP = ''
 SVR_MAIN_PORT = 5020
 
-SVR_DB_NAME = 'DB'
-SVR_DB_ID = 0
+SVR_SUB_NAME = 'DB'
+SVR_SUB_ID = 0
 
 
 

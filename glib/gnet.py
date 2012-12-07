@@ -19,6 +19,7 @@ MSGID_SUB_SERVER_LOGIN = 'SUB_SERVER_LOGIN'
 global is_sub_server
 is_sub_server = False
 
+
 # 初始化
 def init(ip, port): 
     glog.log("server at (%s : %d)" % (ip, port))
@@ -70,7 +71,8 @@ def send(connection_id, data):
     trans.send(connection_id, serialized)
 
 
-def sends(sub_svr_name, data):
+# 主服务器发送给子服务器
+def sends(sub_svr_name, sub_svr_id, data):
     global SUB_SERVER_MAP, is_sub_server
     glog.log("gnet>[sends] %s %s" % (sub_svr_name, str(data)))
 
@@ -79,9 +81,10 @@ def sends(sub_svr_name, data):
         return
 
     buff = msgpack.packb(data)
-    trans.send(SUB_SERVER_MAP[sub_svr_name], buff)
+    trans.send(SUB_SERVER_MAP[sub_svr_name][sub_svr_id], buff)
 
 
+# 子服务器发送给主服务器
 def sendm(data):
     global is_sub_server
     glog.log("gnet>[sends] %s" % str(data))

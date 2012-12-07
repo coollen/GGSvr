@@ -37,15 +37,18 @@ def send(skt, data):
     print "[send]"+repr(buff)
 
 def recv(skt):
+    '''recv message'''
     buff = skt.recv(10240)
     msg = msgpack.unpackb(buff)
     print "[recv]"+repr(msg)
 
 def login(skt):
+    '''send login'''
     net_msg(skt, (1, "coollen", "coollen1"))
 
 def test(skt):
-    send(skt, (prt_test_game.TEST, "test msg"))
+    '''send test'''
+    send(skt, (prt_test_game.TEST, "client -> main"))
 
 FUNC_MAP = {
     "r"    : recv,
@@ -85,7 +88,7 @@ def print_help():
     print "c : reconnect"
     print "q : quit"
     for k,v in FUNC_MAP.iteritems():
-        print "%s : %s" % (str(k), str(v))
+        print "%s : %s" % (str(k), str(v.__doc__))
 
 if __name__ == "__main__":
     print "--------------------- start -------------------"
