@@ -18,37 +18,19 @@ GGSvr是非常轻量级的使用socket的MMORPG服务端框架.它运行在linux
 * 分场景的场景管理支持
 * 无缝地图场景的场景管理支持
 
-使用说明:
---------------------
-* 安装easy_install
-  * apt-get install python-setuptools
+设计理念:
+---------------------
+* 从简单易用出发设计API,尽量使用函数式API
+* 快速学习后就可以开始游戏逻辑编码,快速上手写逻辑
+* 少做出错处理,尽量将错误暴露出来
 
-* 安装gevnet:
-  * 安装debian编译环境  apt-get install build-essential 
-  * 安装python-dev包 apt-get install python-dev   
-  * 安装python-dev包 apt-get install libevent-dev
-  * easy_install gevent
+详细资料:
+---------------------
+github wiki: https://github.com/coollen/GGSvr/wiki
 
-* 安装MessagePack
-  * easy_install msgpack-python
-
-* 安装SQLAlchemy
-  * easy_install sqlalchemy
-
-* 获取GGSvr代码
-  * git clone https://github.com/coollen/GGSvr.git
-
-* 启动服务器端
-  * python init.py
-
-* 启动子服务器
-  * python init_sub.py
-
-* 启动测试客户端
-  * cd test
-  * python test_client.py
-  * 输入h (回车) 可以显示出支持的命令
-
+示例代码:
+---------------------
+github: https://github.com/coollen/GGSvr/blob/master/test/oche.py
 
 其他资料:
 ---------------------
@@ -57,9 +39,8 @@ GGSvr是非常轻量级的使用socket的MMORPG服务端框架.它运行在linux
 * SQLAlchemy官网:http://www.sqlalchemy.org
 
 ---------------------
-* 我经常打出GG,lol
-* 不过,最近在玩dnf
+* 我将gnet这一层叫做level 1,表示是最低层的上面一层
+* 思考账号部分和玩家管理部分
 * 增加极简RPC功能
 * 学之者生,用之者死,切记切记
-* 差不多要写点wiki了
 * 认真你就输了
