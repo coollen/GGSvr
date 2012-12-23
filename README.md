@@ -18,37 +18,15 @@ GGSvr是非常轻量级的使用socket的MMORPG服务端框架.它运行在linux
 * 分场景的场景管理支持
 * 无缝地图场景的场景管理支持
 
-使用说明:
---------------------
-* 安装easy_install
-  * apt-get install python-setuptools
+设计理念:
+---------------------
+* 从简单易用出发设计API,尽量使用函数式API
+* 快速学习后就可以开始游戏逻辑编码,快速上手写逻辑
+* 少做出错处理,尽量将错误暴露出来
 
-* 安装gevnet:
-  * 安装debian编译环境  apt-get install build-essential 
-  * 安装python-dev包 apt-get install python-dev   
-  * 安装python-dev包 apt-get install libevent-dev
-  * easy_install gevent
-
-* 安装MessagePack
-  * easy_install msgpack-python
-
-* 安装SQLAlchemy
-  * easy_install sqlalchemy
-
-* 获取GGSvr代码
-  * git clone https://github.com/coollen/GGSvr.git
-
-* 启动服务器端
-  * python init.py
-
-* 启动子服务器
-  * python init_sub.py
-
-* 启动测试客户端
-  * cd test
-  * python test_client.py
-  * 输入h (回车) 可以显示出支持的命令
-
+详细资料:
+---------------------
+github wiki: https://github.com/coollen/GGSvr/wiki
 
 其他资料:
 ---------------------
