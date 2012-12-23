@@ -28,6 +28,10 @@ GGSvr是非常轻量级的使用socket的MMORPG服务端框架.它运行在linux
 ---------------------
 github wiki: https://github.com/coollen/GGSvr/wiki
 
+示例代码:
+---------------------
+github: https://github.com/coollen/GGSvr/blob/master/test/oche.py
+
 其他资料:
 ---------------------
 * gevent官网:http://www.gevent.org
