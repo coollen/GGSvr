@@ -5,16 +5,15 @@ GGSvr是非常轻量级的使用socket的MMORPG服务端框架.它运行在linux
 
 特性:
 ---------------------
-* 单线程
 * 纯python
+* 多进程负载均衡
 * 使用gevent网络底层
 * 使用MessagePack作作为网络消息协议
 * 使用SQLAlchemy作为存储引擎
-* 对程序员友好,松散的文件组织方式,中文注释,精简的API接口,容易进行阅读并修改
+* 对程序员友好,松散的文件组织方式,中文注释,极其精简的API接口,容易进行阅读并修改
 
 将来计划加入的特性:
 ---------------------
-* 多进程负载均衡
 * 大厅-游戏房间模式支持
 * 分场景的场景管理支持
 * 无缝地图场景的场景管理支持
@@ -42,6 +41,9 @@ GGSvr是非常轻量级的使用socket的MMORPG服务端框架.它运行在linux
 * 启动服务器端
   * python init.py
 
+* 启动子服务器
+  * python init_sub.py
+
 * 启动测试客户端
   * cd test
   * python test_client.py
@@ -55,6 +57,6 @@ GGSvr是非常轻量级的使用socket的MMORPG服务端框架.它运行在linux
 * SQLAlchemy官网:http://www.sqlalchemy.org
 
 ---------------------
-我经常打出GG
-调试通了多服务器
-增加极简RPG功能
+* 我经常打出GG,lol
+* 不过,最近在玩dnf
+* 增加极简RPC功能
