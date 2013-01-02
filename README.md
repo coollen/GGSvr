@@ -39,9 +39,8 @@ github: https://github.com/coollen/GGSvr/blob/master/test/oche.py
 * SQLAlchemy官网:http://www.sqlalchemy.org
 
 ---------------------
-* 我经常打出GG,lol
-* 不过,最近在玩dnf
+* 我将gnet这一层叫做level 1,表示是最低层的上面一层
+* 思考账号部分和玩家管理部分
 * 增加极简RPC功能
 * 学之者生,用之者死,切记切记
-* 差不多要写点wiki了
 * 认真你就输了
