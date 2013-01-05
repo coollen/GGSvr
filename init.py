@@ -51,8 +51,12 @@ def main():
     #player_mgr.init()
 
     # 游戏逻辑
-    import svr_main
-    svr_main.init()
+    #import svr_main
+    #svr_main.init()
+    # 测试 client-svr_main-svr_sub
+    import svr_test_main
+    svr_test_main.init()
+    
 
     # 开始服务
     gnet.start_loop()

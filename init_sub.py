@@ -43,9 +43,9 @@ def main():
     # 数据库
     #gdb.init()
 
-    # db server
-    import svr_sub
-    svr_sub.init()
+    # 测试 client-svr_main-svr_sub
+    import svr_test_sub
+    svr_test_sub.init()
 
     # 开始服务
     gnet.start_loop()
