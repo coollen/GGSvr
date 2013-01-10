@@ -27,4 +27,9 @@ def on_test_sub(data):
     gnet.sendm([prt_test_game.TEST_SUB, "sub -> main"])
 
 
+def remote_call_test(*arg, **kwds):
+    print "svr_test_sub>remote_call_test"
+    print "*arg:", arg
+    print "**kwds", kwds
+    return ["this is test data", 1,2,3,4, [1,2,3,4]]
 

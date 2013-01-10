@@ -1,8 +1,6 @@
 # coding: utf-8
 # 网络模块
-import traceback
-import msgpack
-import socket
+import traceback, socket, msgpack
 import net_transport_server as trans
 import net_transport_sub_server as trans_sub
 import glog
@@ -24,10 +22,12 @@ is_sub_server = False
 def init(ip, port): 
     glog.log("server at (%s : %d)" % (ip, port))
     trans.init((ip, port), on_connect, on_disconnect, on_data)
-    
+
+    import remote_call;remote_call.init()
+
     # 注册子服务器登录
     reg(MSGID_SUB_SERVER_LOGIN, on_sub_server_login)
-    
+
 
 # 初始化子服务器
 def init_sub_server(main_ip, main_port, sub_name, sub_id):
@@ -35,6 +35,8 @@ def init_sub_server(main_ip, main_port, sub_name, sub_id):
     glog.log("server sub_server (%s : %d)" % (sub_name, sub_id)) 
     trans_sub.init((main_ip, main_port), on_connect, on_disconnect, on_data)
     
+    import remote_call;remote_call.init()
+
     # 发送子服务器登录
     msg = msgpack.packb((MSGID_SUB_SERVER_LOGIN, sub_name, sub_id))
     trans_sub.send(msg)
@@ -63,7 +65,7 @@ def reg(id, func):
     return True
 
 
-# 发送数据
+# 服务端给客户端发送数据
 def send(connection_id, data):
     glog.log("gnet>[send] %d %s" % (connection_id, str(data)))
 
@@ -77,7 +79,7 @@ def sends(sub_svr_name, sub_svr_id, data):
     glog.log("gnet>[sends] %s %s" % (sub_svr_name, str(data)))
 
     if is_sub_server:
-        glog.error("can NOT do sends()")
+        glog.error("gnet>can NOT do sends()")
         return
 
     buff = msgpack.packb(data)
@@ -90,11 +92,17 @@ def sendm(data):
     glog.log("gnet>[sends] %s" % str(data))
 
     if not is_sub_server:
-        glog.error("can NOT do sendm()")
+        glog.error("gnet>can NOT do sendm()")
         return
 
     buff = msgpack.packb(data)
     trans_sub.send(buff)
+
+
+# 远程调用
+def call(sub_svr_name, sub_svr_id, func, *args, **kwds):
+    import remote_call
+    return remote_call.remote_call(sub_svr_name, sub_svr_id, func, args, kwds)
 
 
 # client连接

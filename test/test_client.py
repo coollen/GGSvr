@@ -50,10 +50,15 @@ def test(skt):
     '''send test'''
     send(skt, (prt_test_game.TEST, "client -> main"))
 
+def test_remote_call(skt):
+    '''send test_remote_call'''
+    send(skt, (prt_test_game.TEST_REMOTE_CALL, "client -> main"))
+
 FUNC_MAP = {
     "r"    : recv,
     "2"    : login,
     "1"    : test,
+    "3"    : test_remote_call,
 }
 
 
@@ -64,6 +69,8 @@ def run (address):
     client.connect(address)
     end_time = time.time()
     print "connect use time:", end_time - start_time
+
+    print_help() 
 
     isExit = False
     while(not isExit):
