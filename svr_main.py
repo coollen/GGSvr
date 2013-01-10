@@ -1,10 +1,40 @@
 # coding:utf-8
 
-import test_game
+import login
 
 
 def init ():
-	test_game.init()
+	login.init()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
