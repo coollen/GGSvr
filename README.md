@@ -1,4 +1,4 @@
-GGSvr (GoodGame Server Framework)
+GGSvr (GoodGame Server Framework) Ver:0.1
 =====================
 GGSvr是非常轻量级的使用socket的MMORPG服务端框架.它运行在linux下,适用于手机游戏,网页游戏和大型MMO游戏的服务端.
 
@@ -39,8 +39,8 @@ github: https://github.com/coollen/GGSvr/blob/master/test/oche.py
 * SQLAlchemy官网:http://www.sqlalchemy.org
 
 ---------------------
+* 先把目前的版本定位0.1版本吧,开始稳定这个版本了
 * 我将gnet这一层叫做level 1,表示是最低层的上面一层
 * 思考账号部分和玩家管理部分
-* 增加极简RPC功能
 * 学之者生,用之者死,切记切记
 * 认真你就输了
