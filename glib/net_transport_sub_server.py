@@ -1,14 +1,10 @@
 # coding: utf-8
-import gevent
+import sys, struct, gevent
 from gevent import monkey;
-import socket
 import glog
-
 # patches stdlib (including socket and ssl modules) to cooperate with other greenlets
 monkey.patch_all()
 
-# 网络消息最大长度
-NET_MESSAGE_MAX_LEN = 1024 * 1024
 
 # 回调函数(from gnet)
 global func_on_data, func_on_disconnect, func_on_connect
@@ -31,17 +27,34 @@ class Connection(object):
 def spawn(conn):
     while True:
         try:
-            buff = conn.socket.recv(NET_MESSAGE_MAX_LEN)
+            buff = _recv_package(conn.socket)
         except Exception, e:
             raise e
-            _on_disconnect()
             break
-        else:
+        
+        if len(buff):
             _on_data(conn, buff)
-            gevent.sleep(0)
+        else:
+            glog.debug("trans>recv EMPTY buff, main server disconected")
+            break
 
-    _on_disconnection()
+        gevent.sleep(0)
 
+    _on_disconnect()
+
+
+# 
+def _recv_package(socket):
+    from gnet import NET_MESSAGE_MAX_LEN_SIZE
+
+    len_buff = socket.recv(NET_MESSAGE_MAX_LEN_SIZE)
+    if len(len_buff) <= 0:  return ''
+
+    length = struct.unpack('I', len_buff)[0]
+    buff = socket.recv(length)
+    if len(buff) <= 0:  return ''
+
+    return buff
 
 
 # 初始化
@@ -54,7 +67,7 @@ def init(address, on_connect_callback, on_disconnect_callback, on_data_callback)
     func_on_data = on_data_callback
     
     # 链接主服务器
-    s =socket.socket()
+    s = gevent.socket.socket()
     s.connect(address)
     _on_connect(s, address)
 
@@ -72,7 +85,7 @@ def start_loop():
 # 发送数据
 def send(buff):
     global connection
-    connection.socket.send(buff)
+    connection.socket.sendall(buff)
 
 
 # 连接
@@ -96,7 +109,7 @@ def _on_disconnect():
 
     try:
         connection.socket.close()
-        glog.log("socket close OK")
+        glog.log("trans>socket close OK")
     except Exception, e:
         raise e
 

@@ -1,6 +1,6 @@
 # coding: utf-8
 # 网络模块
-import traceback, socket, msgpack
+import struct, traceback, socket, msgpack
 import net_transport_server as trans
 import net_transport_sub_server as trans_sub
 import glog
@@ -17,6 +17,10 @@ MSGID_SUB_SERVER_LOGIN = 'SUB_SERVER_LOGIN'
 global is_sub_server
 is_sub_server = False
 
+# 网络消息最大长度
+NET_MESSAGE_MAX_LEN = 0xFFFFFFFF
+NET_MESSAGE_MAX_LEN_SIZE = struct.calcsize('I')
+
 
 # 初始化
 def init(ip, port): 
@@ -32,14 +36,13 @@ def init(ip, port):
 # 初始化子服务器
 def init_sub_server(main_ip, main_port, sub_name, sub_id):
     global is_sub_server
-    glog.log("server sub_server (%s : %d)" % (sub_name, sub_id)) 
+    glog.log("server sub_server (%s : %d) at %s:%d" % (sub_name, sub_id, main_ip, main_port)) 
     trans_sub.init((main_ip, main_port), on_connect, on_disconnect, on_data)
     
     import remote_call;remote_call.init()
 
     # 发送子服务器登录
-    msg = msgpack.packb((MSGID_SUB_SERVER_LOGIN, sub_name, sub_id))
-    trans_sub.send(msg)
+    trans_sub.send(_pack([MSGID_SUB_SERVER_LOGIN, sub_name, sub_id]))
 
     is_sub_server = True
 
@@ -68,35 +71,31 @@ def reg(id, func):
 # 服务端给客户端发送数据
 def send(connection_id, data):
     glog.log("gnet>[send] %d %s" % (connection_id, str(data)))
-
-    serialized = msgpack.packb(data)
-    trans.send(connection_id, serialized)
+    trans.send(connection_id, _pack(data))
 
 
 # 主服务器发送给子服务器
 def sends(sub_svr_name, sub_svr_id, data):
     global SUB_SERVER_MAP, is_sub_server
-    glog.log("gnet>[sends] %s %s" % (sub_svr_name, str(data)))
+    glog.log("gnet>[sends] (%s : %d) %s" % (sub_svr_name, sub_svr_id, str(data)))
 
     if is_sub_server:
         glog.error("gnet>can NOT do sends()")
         return
 
-    buff = msgpack.packb(data)
-    trans.send(SUB_SERVER_MAP[sub_svr_name][sub_svr_id], buff)
+    trans.send(SUB_SERVER_MAP[sub_svr_name][sub_svr_id], _pack(data))
 
 
 # 子服务器发送给主服务器
 def sendm(data):
     global is_sub_server
-    glog.log("gnet>[sends] %s" % str(data))
+    glog.log("gnet>[sendm] %s" % str(data))
 
     if not is_sub_server:
         glog.error("gnet>can NOT do sendm()")
         return
 
-    buff = msgpack.packb(data)
-    trans_sub.send(buff)
+    trans_sub.send(_pack(data))
 
 
 # 远程调用
@@ -112,15 +111,19 @@ def on_connect(address, connection_id):
 
 # client断开
 def on_disconnect(connection_id):
-    glog.log("on_disconnect: %d" + connection_id)
-    
+    name, id =  _get_sub_server_by_connection(connection_id)
+    if name:
+        glog.log("on_disconnect sub server: (%s : %d)" % (name, id))
+    else:
+        glog.log("on_disconnect: %d" % connection_id)    
+
 
 # 收到网络消息
-def on_data(connection_id, data):
+def on_data(connection_id, buff):
     global MSG_MAP
-    
+
     try:
-        msg = msgpack.unpackb(data)
+        msg = msgpack.unpackb(buff)
     except Exception as e:
         glog.error("gnet>ERROR message format")
         raise e
@@ -150,6 +153,19 @@ def on_data(connection_id, data):
 # 断开玩家
 def disconnect():
     pass
+
+
+# 
+def _pack(data):
+    buff = msgpack.packb(data)
+    length = len(buff)
+
+    if length > NET_MESSAGE_MAX_LEN:
+        glog.error("gnet>_pack:data length is OVER")
+        return
+
+    len_buff = struct.pack('I', length)
+    return len_buff + buff
 
 
 # 设置服务器
@@ -182,5 +198,11 @@ def on_sub_server_login(data):
     send(connection_id, ["msgid", "test 2"])
     '''
 
-
-
+# 检测链接是否是
+def _get_sub_server_by_connection(conn_id):
+    global SUB_SERVER_MAP
+    for name, servers in SUB_SERVER_MAP.iteritems():
+        for id, _conn_id in servers.iteritems():
+            if _conn_id == conn_id:
+                return name, id
+    return None, None

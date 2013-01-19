@@ -1,14 +1,11 @@
 # coding: utf-8
-import gevent
+import sys, struct, gevent
 from gevent import monkey;
 from gevent.server import StreamServer
 import glog
-
 # patches stdlib (including socket and ssl modules) to cooperate with other greenlets
 monkey.patch_all()
 
-# 网络消息最大长度
-NET_MESSAGE_MAX_LEN = 1024 * 1024
 
 # 服务器实例
 global server
@@ -30,20 +27,38 @@ class Connection(object):
     
 
 # this handler will be run for each incoming connection in a dedicated greenlet
-def spawn(socket, address):    
+def spawn(socket, address):
     conn = _on_connect(socket, address)
     while True:
         try:
-            buff = socket.recv(NET_MESSAGE_MAX_LEN)
+            buff = _recv_package(socket)
         except Exception, e:
             raise e
-            _on_disconnect(conn)
             break
-        else:
+
+        if len(buff):
             _on_data(conn, buff)
-            gevent.sleep(0)
+        else:
+            glog.debug("trans>recv EMPTY buff, client disconected")
+            break
+
+        gevent.sleep(0)
 
     _on_disconnect(conn)
+
+
+# 
+def _recv_package(socket):
+    from gnet import NET_MESSAGE_MAX_LEN_SIZE
+
+    len_buff = socket.recv(NET_MESSAGE_MAX_LEN_SIZE)
+    if len(len_buff) <= 0:  return ''
+
+    length = struct.unpack('I', len_buff)[0]
+    buff = socket.recv(length)
+    if len(buff) <= 0:  return ''
+
+    return buff
 
 
 # 初始化
@@ -68,7 +83,7 @@ def start_loop():
 def send(connection_id, buff):
     global conections
     conn = connections[connection_id]
-    conn.socket.send(buff)
+    conn.socket.sendall(buff)
 
 
 # 连接
@@ -94,16 +109,16 @@ def _on_disconnect(connection):
     conn = connections.pop(conn_id)
     try:
         conn.socket.close()
-        glog.log("socket close OK")
+        glog.log("trans>socket close OK")
     except Exception, e:
         raise e
 
 
 # 数据
-def _on_data(connection, buf):
+def _on_data(connection, buff):
     global func_on_data
     if func_on_data:
-        func_on_data(connection.connection_id, buf)
+        func_on_data(connection.connection_id, buff)
     
 
 
