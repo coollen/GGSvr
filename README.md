@@ -10,7 +10,7 @@ GGSvr是非常轻量级的使用socket的MMORPG服务端框架.它运行在linux
 * 支持远程调用(RPC),进程间使用RPC通信
 * 使用gevent网络底层
 * 使用MessagePack作作为网络消息协议
-* 使用SQLAlchemy作为存储引擎
+* 使用SQLAlchemy作为存储引擎(可选)
 * 对程序员友好,松散的文件组织方式,中文注释,极其精简的API接口,容易进行阅读并修改
 
 将来计划加入的特性:
