@@ -46,3 +46,5 @@ github: https://github.com/coollen/GGSvr/blob/master/test/oche.py
 * 我将gnet这一层叫做level 1,表示是最低层的上面一层
 * 思考账号部分和玩家管理部分
 * 认真你就输了
+
+*微薄 http://weibo.com/coollenmmx
