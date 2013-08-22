@@ -39,12 +39,5 @@ github: https://github.com/coollen/GGSvr/blob/master/test/oche.py
 * MessagePack官网:http://msgpack.org
 * SQLAlchemy官网:http://www.sqlalchemy.org
 
----------------------
-* 最近开搞手机游戏啦
-* 通过一轮单机的压力测试,结果比我预期的较稳定,也修改了很多bug
-* 先把目前的版本定位0.1版本吧,开始稳定这个版本了
-* 我将gnet这一层叫做level 1,表示是最低层的上面一层
-* 思考账号部分和玩家管理部分
-* 认真你就输了
 
 *微薄 http://weibo.com/coollenmmx
