@@ -1,32 +1,11 @@
-#coding:utf-8
+#!/usr/bin/python
+# coding: utf-8
+
+import sys;sys.path.append("../comm/")
+from helper import patch_sys_path
+patch_sys_path("../")
+# ------------------------------
 import sys, os, threading, struct
-# 脚本路径
-SCRIPT_ROOT_PATH = '../'
-
-def patch_sys_path():
-    sys_paths = []
-
-    def add_path(path):
-        paths = os.listdir(path)
-        for p in paths:
-            abs_path = path + p
-            if abs_path[-1] != "/": abs_path += "/"
-            if p == ".svn" or not os.path.isdir(abs_path):
-                pass        # 过滤掉.svn  文件
-            else:
-                add_path(abs_path)
-                sys_paths.append(abs_path)
-
-    add_path(SCRIPT_ROOT_PATH)
-
-    for p in sys_paths:
-        sys.path.insert(0, p)
-    print "patch_sys_path() ok"
-patch_sys_path()
-
-#print "sys.path:", sys.path
-# ------------------------------------------
-
 import socket, time
 import msgpack
 import prt_test_game
@@ -67,12 +46,12 @@ def _recv_package(socket):
 
     return buff
 
-def login(skt):
-    '''send login'''
-    net_msg(skt, (1, "coollen", "coollen1"))
+def oche(skt):
+    '''send oche'''
+    send(skt, (1, "hellow, coollen!"))
 
 def test(skt):
-    '''send test'''
+    '''send test, client -> main svr -> sub svr -> main svr -> client'''
     send(skt, (prt_test_game.TEST, "client -> main"))
 
 def stress_test(skt, workder_idx, loop_idx):
@@ -86,7 +65,7 @@ def test_remote_call(skt):
 def test_remote_call_hurge(skt):
     '''test remote_call_hurge'''
     for i in xrange (30000):
-        print i
+        #print i
         send(skt, (prt_test_game.TEST_REMOTE_CALL, "client -> main"))
 
    
@@ -94,8 +73,8 @@ def test_remote_call_hurge(skt):
 
 FUNC_MAP = {
     "r"     : recv,
-    "2"     : login,
-    "1"     : test,
+    "1"     : oche,
+    "2"     : test,
     "3"     : test_remote_call,
     "4"     : test_remote_call_hurge,
     "5"     : stress_test,
@@ -154,9 +133,6 @@ def run_cmd():
             cskt.connect(address)
         
         elif cmd == "st":
-            #for i in xrange(30000):
-            #    stress_test(cskt)
-            #    recv(cskt) 
             run_stress_test()
         else:
             print_help()
@@ -218,7 +194,7 @@ def print_help():
 
 if __name__ == "__main__":
     print "--------------------- start -------------------"
-    address = ("192.168.0.104", 5020)
+    address = ("127.0.0.1", 5020)
     run(address)
     print "--------------------- end ---------------------"
 

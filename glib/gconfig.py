@@ -1,9 +1,7 @@
 # coding: utf-8
 
-# 全局配置
 
-# IP端口定义
-SVR_MAIN_IP = ''
+SVR_MAIN_IP = '0.0.0.0'
 SVR_MAIN_PORT = 5020
 
 SVR_SUB_NAME = 'DB'

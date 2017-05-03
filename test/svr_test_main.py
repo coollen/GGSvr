@@ -30,12 +30,12 @@ def on_test(data):
 
     player_conn_id = conn_id
 
-    time.sleep(1);
-    print "sleep 1"
-    time.sleep(1);
-    print "sleep 1"
-    time.sleep(1);
-    print "sleep 1"
+    #time.sleep(1);
+    #print "sleep 1"
+    #time.sleep(1);
+    #print "sleep 1"
+    #time.sleep(1);
+    #print "sleep 1"
     #gnet.send( conn_id, [msg] )
     gnet.sends(SVR_SUB_NAME, SVR_SUB_ID, [prt_test_game.TEST_SUB, "mian -> sub"])
 
@@ -47,12 +47,12 @@ def on_test_sub(data):
     conn_id = data[0]
     msg = data[1]
 
-    time.sleep(1)
-    print "sleep 1"
-    time.sleep(1)
-    print "sleep 1"
-    time.sleep(1)
-    print "sleep 1"
+    #time.sleep(1)
+    #print "sleep 1"
+    #time.sleep(1)
+    #print "sleep 1"
+    #time.sleep(1)
+    #print "sleep 1"
     gnet.send( player_conn_id, [prt_test_game.TEST, "main -> client"] ) 
 
 
